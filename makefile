@@ -31,7 +31,7 @@ $(OUTDIR)$(ROOT): $(SOURCES)
 	for file in $?; do \
 		rm -rf "$(OUTDIR)$(ROOT)$${file%.md}"; \
 		mkdir -p $$(dirname "$(OUTDIR)$(ROOT)$${file}"); \
-		pandoc --filter="$(FILTER)" --template="$(TEMPLATE)" --highlight-style="${HIGHLIGHT_STYLE}" --standalone --toc --output "$(OUTDIR)$(ROOT)$${file%.md}.html" --metadata=root:"$(ROOT)" --metadata=filename:"$${file}" "$${file}"; \
+		pandoc --filter="$(FILTER)" --template="$(TEMPLATE)" --highlight-style="${HIGHLIGHT_STYLE}" --standalone --toc --output "$(OUTDIR)$(ROOT)$${file%.md}.html" --metadata=root:"$(ROOT)" --metadata=path:"$${file%.md}" "$${file}"; \
 	done
 	touch "$(OUTDIR)$(ROOT)"
 
