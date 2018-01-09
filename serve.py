@@ -34,7 +34,7 @@ try:
                 return
 
             print('rebuilding')
-            subprocess.call(['make', '-C', reldir, 'all'], stdout=open('/dev/null'), stderr=subprocess.STDOUT)
+            subprocess.call(['make', '-C', reldir, 'website'], stdout=open('/dev/null'), stderr=subprocess.STDOUT)
             self.last = cur
 
     observer = Observer()

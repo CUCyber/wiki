@@ -15,6 +15,8 @@ SOURCES!=find * \( -path "$(OUTDIR)" \) -prune -o -type f -name '*.md' -a -not \
 
 all: $(OUTDIR)$(ROOT)
 
+website: $(WEBSITE)$(ROOT)
+
 serve: $(WEBSITE)$(ROOT)
 	$(SERVE) $(WEBSITE)
 
@@ -38,4 +40,4 @@ $(OUTDIR)$(ROOT): $(SOURCES)
 $(WEBSITE)$(ROOT): $(OUTDIR)$(ROOT)
 	rsync -av --delete "$(OUTDIR)$(ROOT)" "$(WEBSITE)$(ROOT)"
 
-.PHONY: all serve update clean
+.PHONY: all website serve update clean
