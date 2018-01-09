@@ -17,7 +17,7 @@ def rewrite_target(key, val, fmt, meta):
 
 # rewrite link targets in file
 def rewrite_targets(doc, fmt):
-    return walk(doc, rewrite_target, fmt, doc['meta'] if 'meta' in doc else {})
+    return walk(doc, rewrite_target, fmt, doc['meta'] if 'meta' in doc else doc[0]['unMeta'])
 
 
 if __name__ == '__main__':
