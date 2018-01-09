@@ -5,8 +5,11 @@ title: Introduction
 ## Hello
 World!
 
-## Self
+## Link
 [Link](intro/introduction)
+
+## Self
+[Self](intro/introduction#self)
 
 ## Image
 ![](https://fooster.io/res/img/clippy.svg)

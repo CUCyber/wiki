@@ -12,7 +12,8 @@ def rewrite_target(key, val, fmt, meta):
     if key == 'Link':
         # get details of link
         attr, inline, target = val
-        return Link(attr, inline, [meta['root']['c'] + target[0] + '.html', target[1]])
+        target[0] = target[0].split('#', 1)
+        return Link(attr, inline, [meta['root']['c'] + target[0][0] + '.html' + ('#' + target[0][1] if len(target[0]) > 1 else ''), target[1]])
 
 
 # rewrite link targets in file
