@@ -35,7 +35,7 @@ $ sudo pip3 install pandocfilters
 ### Fedora
 
 ```sh
-$ sudo dnf install make git rsync pandoc python3-pandocfilters
+$ sudo dnf install make git rsync pandoc python3-pandocfilters python2-watchdog
 ```
 
 
