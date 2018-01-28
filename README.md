@@ -12,7 +12,6 @@ In this repository are the markdown sources to the wiki on the CU Cyber website.
 * python3
 * pandoc
 * pandocfilters
-* python
 * python-watchdog (optional; for automatic rebuilding on presentation change)
 
 
@@ -35,14 +34,14 @@ $ sudo pip3 install pandocfilters
 ### Fedora
 
 ```sh
-$ sudo dnf install make git rsync pandoc python3-pandocfilters python2-watchdog
+$ sudo dnf install make git rsync pandoc python3-watchdog python3-pandocfilters
 ```
 
 
 ### Arch
 
 ```sh
-$ sudo pacman -S make git rsync pandoc python-pandocfilters python-watchdog
+$ sudo pacman -S make git rsync pandoc python2-watchdog python-pandocfilters
 ```
 
 
@@ -59,8 +58,8 @@ $ sudo pip3 install pandocfilters
 Requires [Homebrew](https://brew.sh/). Use `gmake` instead of `make`.
 
 ```sh
-$ brew install make git rsync python3 pandoc
-$ pip install watchdog
+$ brew install make git rsync python2 python3 pandoc
+$ pip2 install watchdog
 $ pip3 install pandocfilters
 ```
 
