@@ -12,3 +12,9 @@ Welcome to the CU Cyber wiki! Use the links below to get started.
 ## Wiki
 
 * [Create New Page](https://github.com/CUCyber/wiki/new/master)
+
+
+## Linux
+
+* [Linux Intro](linux/linux-intro)
+* [Distro Comparisons](linux/distro-comparisons)
