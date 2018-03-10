@@ -85,6 +85,8 @@ dhclient tapX
 **Arch**
 
 ```
+dhcpcd -k tapX
+
 dhcpcd tapX
 ```
 
