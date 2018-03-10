@@ -75,14 +75,14 @@ ip addr
 
 Search through your interfaces for something that looks like `tapX` where X is a number (Usually 0). This is probably the interface that you are connected over. Now force dhcp to release its current lease and get a new one over that interface we found.
 
-**Ubuntu/Fedora:**
+**Ubuntu/Fedora**
 ```
 dhclient -r tapX
 
 dhclient tapX
 ```
 
-**Arch:**
+**Arch**
 
 ```
 dhcpcd tapX
