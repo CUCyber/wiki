@@ -2,28 +2,28 @@
 title: Connecting to the Lab
 ...
 
-## Request VPN Access
+## Requesting VPN Access
 
-* **TODO**
+* *TODO*
 * You will be given a personal OpenVPN config file that ends with the extension .ovpn. This is your ticket into the server.
 
 ## Installing the OpenVPN Client
 
 ### Linux Instructions
 
-Fedora
+**Fedora**
 
 ```
 sudo dnf install openvpn
 ```
 
-Ubuntu
+**Ubuntu**
 
 ```
 sudo apt install openvpn
 ```
 
-Arch
+**Arch**
 
 ```
 sudo pacman -S openvpn
@@ -31,15 +31,15 @@ sudo pacman -S openvpn
 
 ### Windows Instructions
 
-**TODO**
+* *TODO*
 
 ### MacOS Instructions
 
-**TODO**
+* *TODO*
 
 ## Connecting to the Lab VPN
 
-Note:
+**Note:**
 
 The lab can only be accessed from Clemson's network. If you're off campus you will have to connect to the Clemson VPN first before attempting to connect to the lab VPN. Instructions for connecting to the Clemson VPN can be found [here.](https://hdkb.clemson.edu/phpkb/article.php?id=64)
 
@@ -75,14 +75,14 @@ ip addr
 
 Search through your interfaces for something that looks like `tapX` where X is a number (Usually 0). This is probably the interface that you are connected over. Now force dhcp to release its current lease and get a new one over that interface we found.
 
-Ubuntu/Fedora:
+**Ubuntu/Fedora:**
 ```
 dhclient -r tapX
 
 dhclient tapX
 ```
 
-Arch:
+**Arch:**
 
 ```
 dhcpcd tapX
