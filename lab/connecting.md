@@ -50,7 +50,7 @@ The lab can only be accessed from Clemson's network. If you're off campus you wi
 Open a terminal and navigate to the folder with your personal OpenVPN config file ending in .ovpn.
 
 ```
-openvpn --config <yourname>.ovpn
+sudo openvpn --config <yourname>.ovpn
 ```
 
 This will connect you to the lab VPN.
@@ -77,17 +77,17 @@ Search through your interfaces for something that looks like `tapX` where X is a
 
 **Ubuntu/Fedora**
 ```
-dhclient -r tapX
+sudo dhclient -r tapX
 
-dhclient tapX
+sudo dhclient tapX
 ```
 
 **Arch**
 
 ```
-dhcpcd -k tapX
+sudo dhcpcd -k tapX
 
-dhcpcd tapX
+sudo dhcpcd tapX
 ```
 
 ### Windows Instructions
