@@ -2,11 +2,6 @@
 title: Connecting to the Lab
 ...
 
-## Requesting VPN Access
-
-* *TODO*
-* You will be given a personal OpenVPN config file that ends with the extension .ovpn. This is your ticket into the server.
-
 ## Installing the OpenVPN Client
 
 ### Linux Instructions
