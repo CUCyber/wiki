@@ -8,6 +8,6 @@ title: Requesting Access
 
 ## Connect to lab
 
-Information on connecting to the lab can be found [here.](connecting.html)
+Information on connecting to the lab can be found [here.](connecting)
 
 ## Change your password
