@@ -11,9 +11,10 @@ HIGHLIGHT_STYLE=tango
 WEBSITE=../website
 SERVE=./serve.py
 
-SOURCES!=find * \( -path "$(OUTDIR)" \) -prune -o -type f -name '*.md' -a -not \( -name 'LICENSE.md' -o -name 'README.md' \) -print
+SOURCES_MD!=find * \( -path "$(OUTDIR)" \) -prune -o -type f -name '*.md' -a -not \( -name 'LICENSE.md' -o -name 'README.md' \) -print
+SOURCES_IMG!=find * \( -path "$(OUTDIR)" \) -prune -o -type f -name '*.png' -print
 
-all: $(OUTDIR)$(ROOT)
+all: md-$(OUTDIR)$(ROOT) img-$(OUTDIR)$(ROOT)
 
 website: $(WEBSITE)$(ROOT)
 
@@ -28,7 +29,7 @@ update: $(WEBSITE)$(ROOT)
 clean:
 	rm -rf "$(OUTDIR)"
 
-$(OUTDIR)$(ROOT): $(SOURCES)
+md-$(OUTDIR)$(ROOT): $(SOURCES_MD)
 	mkdir -p $(OUTDIR)$(ROOT)
 	for file in $?; do \
 		rm -rf "$(OUTDIR)$(ROOT)$${file%.md}"; \
@@ -37,7 +38,17 @@ $(OUTDIR)$(ROOT): $(SOURCES)
 	done
 	touch "$(OUTDIR)$(ROOT)"
 
-$(WEBSITE)$(ROOT): $(OUTDIR)$(ROOT)
+img-$(OUTDIR)$(ROOT): $(SOURCES_IMG)
+	mkdir -p $(OUTDIR)$(ROOT)
+	for file in $?; do \
+		rm -rf "$(OUTDIR)$(ROOT)$${file}"; \
+		mkdir -p $$(dirname "$(OUTDIR)$(ROOT)$${file}"); \
+		cp --verbose "$${file}" "$(OUTDIR)$(ROOT)$${file}"; \
+	done
+	touch "$(OUTDIR)$(ROOT)"
+
+
+$(WEBSITE)$(ROOT): md-$(OUTDIR)$(ROOT) img-$(OUTDIR)$(ROOT)
 	rsync -av --delete "$(OUTDIR)$(ROOT)" "$(WEBSITE)$(ROOT)"
 
 .PHONY: all website serve update clean
