@@ -1,6 +1,6 @@
 # Copyright
 
-All presentation material is licensed under the Creative Commons Attribution-ShareAlike 4.0 license. All code examples, unless otherwise specified, are licensed under the BSD 2-Clause license. The build system is licensed under the MIT license.
+All wiki material is licensed under the Creative Commons Attribution-ShareAlike 4.0 license. All code examples, unless otherwise specified, are licensed under the BSD 2-Clause license. The build system is licensed under the MIT license.
 
 
 ## Creative Commons Attribution-ShareAlike 4.0 International Public License
