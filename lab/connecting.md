@@ -52,39 +52,10 @@ This will connect you to the lab VPN.
 
 #### Testing Connection to the Lab
 
-At this point you should be connected to the lab VPN, but you may not be able to access the machines. To test your connectivity execute the following command in a terminal.
+At this point you should be connected to the lab VPN. To test your connectivity execute the following command in a terminal.
 
 ```
 ping -c 5 architect.lab.cucyber.net
 ```
 
 If the ping succeeds then you've successfully connected to the VPN and your DNS is working as intended! However, if the ping fails then continue to the next section on troubleshooting DNS.
-
-#### Troubleshooting: DNS Issues
-
-First we are going to determine the network interface that is connected to the VPN. In a terminal execute the following command.
-
-```
-ip addr
-```
-
-Search through your interfaces for something that looks like `tapX` where X is a number (Usually 0). This is probably the interface that you are connected over. Now force dhcp to release its current lease and get a new one over that interface we found.
-
-**Ubuntu/Fedora**
-```
-sudo dhclient -r tapX
-
-sudo dhclient tapX
-```
-
-**Arch**
-
-```
-sudo dhcpcd -k tapX
-
-sudo dhcpcd tapX
-```
-
-### Windows Instructions
-
-### MacOS Instructions
