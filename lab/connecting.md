@@ -30,7 +30,7 @@ sudo pacman -S openvpn
 
 ### MacOS Instructions
 
-* *TODO*
+* Download and install the [TunnelBlick](https://tunnelblick.net/index.html) VPN client.
 
 ## Connecting to the Lab VPN
 
@@ -59,3 +59,11 @@ ping -c 5 architect.lab.cucyber.net
 ```
 
 If the ping succeeds then you've successfully connected to the VPN and your DNS is working as intended! However, if the ping fails then continue to the next section on troubleshooting DNS.
+
+### Mac Instructions
+
+* Use TunnelBlick
+
+### Windows Instructions
+
+
