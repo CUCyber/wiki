@@ -4,66 +4,90 @@ title: Connecting to the Lab
 
 ## Installing the OpenVPN Client
 
+
 ### Linux Instructions
 
 **Fedora**
 
 ```
-sudo dnf install openvpn
+sudo dnf install openconnect openvpn
 ```
 
 **Ubuntu**
 
 ```
-sudo apt install openvpn
+sudo apt install openconnect openvpn
 ```
 
 **Arch**
 
 ```
-sudo pacman -S openvpn
+sudo pacman -S openconnect openvpn
 ```
+
 
 ### Windows Instructions
 
-* *TODO*
+* Download and install the [OpenConnect GUI](https://github.com/openconnect/openconnect-gui/releases) and the [official OpenVPN client](https://openvpn.net/index.php/open-source/downloads.html).
+
 
 ### MacOS Instructions
 
-* Download and install the [TunnelBlick](https://tunnelblick.net/index.html) VPN client.
+* Download and install the [OpenConnect GUI](https://github.com/openconnect/openconnect-gui/releases) and the [TunnelBlick](https://tunnelblick.net/) OpenVPN client.
+
 
 ## Connecting to the Lab VPN
 
-**Note:**
-
-The lab can only be accessed from Clemson's network. If you're off campus you will have to connect to the Clemson VPN first before attempting to connect to the lab VPN. Instructions for connecting to the Clemson VPN can be found [here.](https://hdkb.clemson.edu/phpkb/article.php?id=64)
-
 ### Linux Instructions
 
-#### Connect to the OpenVPN Server
+#### Connecting to Clemson
 
-Open a terminal and navigate to the folder with your personal OpenVPN config file ending in .ovpn.
-
-```
-sudo openvpn --config <yourname>.ovpn
-```
-
-This will connect you to the lab VPN.
-
-#### Testing Connection to the Lab
-
-At this point you should be connected to the lab VPN. To test your connectivity execute the following command in a terminal.
+If you are off campus, you will need to connect to Clemson's VPN. In a terminal, run the following command.
 
 ```
-ping -c 5 architect.lab.cucyber.net
+sudo openconnect https://cuvpn.clemson.edu/
 ```
 
-If the ping succeeds then you've successfully connected to the VPN and your DNS is working as intended! However, if the ping fails then continue to the next section on troubleshooting DNS.
+
+#### Connect to the Lab
+
+In a terminal, navigate to the folder with your personal OpenVPN config file ending in .ovpn and run the following command.
+
+```
+sudo openvpn --config <username>.ovpn
+```
+
 
 ### Mac Instructions
 
-* Use TunnelBlick
+#### Connecting to Clemson
+
+If you are off campus, you will need to connect to Clemson's VPN. Do this using the OpenConnect GUI and using 'https://cuvpn.clemson.edu/' as the gateway.
+
+
+#### Connect to the Lab
+
+Use the Tunnelblick client to load your OpenVPN config file ending in .ovpn.
+
 
 ### Windows Instructions
 
+#### Connecting to Clemson
 
+If you are off campus, you will need to connect to Clemson's VPN. Do this using the OpenConnect GUI and using 'https://cuvpn.clemson.edu/' as the gateway.
+
+
+#### Connect to the Lab
+
+Use the OpenVPN client to load your OpenVPN config file ending in .ovpn.
+
+
+## Testing Connection to the Lab
+
+At this point you should be connected to the lab VPN. To test your connectivity execute the following command.
+
+```
+ping -c 4 oracle.lab.cucyber.net
+```
+
+If the ping succeeds then you've successfully connected to the VPN and your DNS is working as intended!

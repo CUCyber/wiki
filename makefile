@@ -43,7 +43,7 @@ img-$(OUTDIR)$(ROOT): $(SOURCES_IMG)
 	for file in $?; do \
 		rm -rf "$(OUTDIR)$(ROOT)$${file}"; \
 		mkdir -p $$(dirname "$(OUTDIR)$(ROOT)$${file}"); \
-		cp --verbose "$${file}" "$(OUTDIR)$(ROOT)$${file}"; \
+		cp "$${file}" "$(OUTDIR)$(ROOT)$${file}"; \
 	done
 	touch "$(OUTDIR)$(ROOT)"
 

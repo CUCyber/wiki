@@ -4,7 +4,7 @@ title: Requesting Access
 
 ## Agree to Terms
 
-Email us at [someemail@example.com](mailto:#) from your own @g.clemson.edu or @clemson.edu email address.
+Email us at [cyber@clemson.edu](mailto:cyber@clemson.edu) from your own @g.clemson.edu or @clemson.edu email address.
 This will be used to identify you and we will use this information to confirm that you are a currently-enrolled student.
 Emails from other domains will simply be ignored.
 
@@ -25,11 +25,9 @@ As per the terms of service agreement that you received, this will result in imm
 
 All users are strongly encouraged to change their domain login passwords from the one that was generated and emailed to you.
 
-To do this:
-
-* 
+To do this, once connected to the lab SSH to `<username>@keymaker.lab.cucyber.net` and use the `passwd` command.
 
 ## Connect to lab
 
-Information on connecting to the lab can be found [here.](lab/connecting)
+Information on connecting to the lab can be found [here](lab/connecting).
 
