@@ -13,7 +13,7 @@ def rewrite_target(key, val, fmt, meta):
         # get details of link
         attr, inline, target = val
 
-        if target[0].startswith('http://') or target[0].startswith('https://'):
+        if target[0].startswith('http://') or target[0].startswith('https://') or target[0].startswith('mailto:'):
             url = target[0]
         else:
             parts = target[0].split('#', 1)
