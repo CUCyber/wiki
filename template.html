@@ -65,7 +65,7 @@
             }
 
             @media (min-width: 768px) {
-                h1[id]:before, h2[id]:before, h3[id]:before, h4[id]:before, h5[id]:before, h6[id]:before {
+                *[id]:before {
                     display: block;
                     content: " ";
                     margin-top: -141px;
@@ -206,7 +206,7 @@
                         $include-before$
                         $endfor$
                         $if(title)$
-                        <header id="top">
+                        <header id="top" class="wiki-header">
                             <div class="wiki-heading">
                                 <h1>$title$</h1>
                                 <a href="https://github.com/CUCyber/wiki/edit/master/$path$.md">Edit This Page</a>
@@ -222,9 +222,9 @@
 
                         $if(toc)$
                         <div class="table-of-contents">
-                            <h2>Table of Contents <button data-toggle="collapse" data-target="#TOC" class="btn">Hide</button></h2>
+                            <h2 id="toc">Table of Contents <button data-toggle="collapse" data-target="#tocnav" class="btn">Hide</button></h2>
 
-                            <nav id="TOC" class="collapse in">
+                            <nav id="tocnav" class="collapse in">
                                 $toc$
                             </nav>
                         </div>
