@@ -25,7 +25,7 @@ As per the terms of service agreement that you received, this will result in imm
 
 All users are strongly encouraged to change their domain login passwords from the one that was generated and emailed to you.
 
-To do this, once connected to the lab SSH to `<username>@keymaker.lab.cucyber.net` and use the `passwd` command.
+To do this once connected to the lab, login to https://keymaker.lab.cucyber.net/.
 
 ## Connect to lab
 
