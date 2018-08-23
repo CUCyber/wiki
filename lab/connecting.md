@@ -91,3 +91,10 @@ ping -c 4 oracle.lab.cucyber.net
 ```
 
 If the ping succeeds then you've successfully connected to the VPN and your DNS is working as intended!
+
+
+## Change your password
+
+All users are strongly encouraged to change their domain login passwords from the one that was generated and emailed to you.
+
+To do this once connected to the lab, login to [https://keymaker.lab.cucyber.net/](https://keymaker.lab.cucyber.net/).

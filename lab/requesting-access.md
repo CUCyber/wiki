@@ -21,12 +21,6 @@ As stated in the previous section, after you agree to the terms of service of th
 It is important that you do not share this information with anybody else inside or outside of Clemson University.
 As per the terms of service agreement that you received, this will result in immediate temporary suspension of account and VPN rights while the incident is investigated.
 
-## Change your password
-
-All users are strongly encouraged to change their domain login passwords from the one that was generated and emailed to you.
-
-To do this once connected to the lab, login to https://keymaker.lab.cucyber.net/.
-
 ## Connect to lab
 
 Information on connecting to the lab can be found [here](lab/connecting).
