@@ -16,7 +16,7 @@ The following article exists as an agreement between a user of the Cyber Warfare
 ## Activities
 
 Activities between VLANs are regulated based on the boundaries outlined below.
-Within confines of the law, there is no activity within a **single personal VLAN** that we do not allow.
+Within confines of the law, there is no activity within a **single personal VLAN** that is not allowed.
 
 
 ## Boundaries
@@ -36,7 +36,7 @@ The border of the lab environment is defined as the point at which traffic is NA
 
 ## Incidents
 
-Any attempt to circumvent the barriers we have in place to protect both you and networks you are not permitted to access will result in immediate suspension of access to the lab and lab network while the incident is being investigated. 
+Any attempt to circumvent the barriers put in place to protect both you and networks you are not permitted to access will result in immediate suspension of access to the lab and lab network while the incident is being investigated. 
 In addition, details of the incident will be elevated to the [Security Operations Center at Clemson University](https://ccit.clemson.edu/about/departments/information-security-privacy/security-operations-center/) where it will be handled per university policy and if necessary, elevated to the appropriate authorities.
 
 
