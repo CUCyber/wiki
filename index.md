@@ -7,7 +7,7 @@ toc: false
 Welcome to the CU Cyber wiki! Use the links below to get started.
 
 * [Introduction](intro/introduction)
-* [Schedule - Spring 2018](schedule/2018-spring)
+* [Schedule - Fall 2018](schedule/2018-fall)
 
 ## Wiki
 
