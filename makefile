@@ -3,23 +3,22 @@ SHELL=/bin/bash
 OUTDIR=public
 ROOT=/wiki/
 
-FILTER=./html.py
-TEMPLATE=./template.html
+FILTER=filter.py
+TEMPLATE=template.html
 
 HIGHLIGHT_STYLE=tango
+SERVE=serve.py
 
 WEBSITE=../website
-SERVE=./serve.py
 
-SOURCES_MD!=find * \( -path "$(OUTDIR)" \) -prune -o -type f -name '*.md' -a -not \( -name 'LICENSE.md' -o -name 'README.md' \) -print
-SOURCES_IMG!=find * \( -path "$(OUTDIR)" \) -prune -o -type f -name '*.png' -print
+SOURCES!=find * \( -path '__pycache__' -o -path "$(OUTDIR)" -o -path "$(FILTER)" -o -path "$(TEMPLATE)" -o -path "$(SERVE)" \) -prune -o -type f -a -not \( -name 'makefile' -o -name 'LICENSE.md' -o -name 'README.md' \) -print
 
-all: md-$(OUTDIR)$(ROOT) img-$(OUTDIR)$(ROOT)
+all: $(OUTDIR)$(ROOT)
 
 website: $(WEBSITE)$(ROOT)
 
-serve: $(WEBSITE)$(ROOT)
-	$(SERVE) $(WEBSITE)
+serve: $(OUTDIR)$(ROOT) $(OUTDIR)/images/ $(OUTDIR)/fonts/ $(OUTDIR)/css/ $(OUTDIR)/js/
+	./$(SERVE) $(OUTDIR)
 
 update: $(WEBSITE)$(ROOT)
 	git -C "$(WEBSITE)" add ".$(ROOT)"
@@ -29,26 +28,25 @@ update: $(WEBSITE)$(ROOT)
 clean:
 	rm -rf "$(OUTDIR)"
 
-md-$(OUTDIR)$(ROOT): $(SOURCES_MD)
+$(OUTDIR)$(ROOT): $(SOURCES)
 	mkdir -p $(OUTDIR)$(ROOT)
 	for file in $?; do \
 		rm -rf "$(OUTDIR)$(ROOT)$${file%.md}"; \
 		mkdir -p $$(dirname "$(OUTDIR)$(ROOT)$${file}"); \
-		pandoc --filter="$(FILTER)" --template="$(TEMPLATE)" --highlight-style="${HIGHLIGHT_STYLE}" --standalone --toc --output "$(OUTDIR)$(ROOT)$${file%.md}.html" --metadata=root:"$(ROOT)" --metadata=path:"$$(dirname $$file)" --metadata=file:"$${file%.md}" "$${file}"; \
+		if [ "$${file: -3}" == .md ]; then \
+			pandoc --filter="$(FILTER)" --template="$(TEMPLATE)" --highlight-style="${HIGHLIGHT_STYLE}" --standalone --toc --output "$(OUTDIR)$(ROOT)$${file%.md}.html" --metadata=root:"$(ROOT)" --metadata=path:"$$(dirname $$file)" --metadata=file:"$${file%.md}" "$${file}"; \
+		else \
+			cp "$${file}" "$(OUTDIR)$(ROOT)$${file}"; \
+		fi \
 	done
 	touch "$(OUTDIR)$(ROOT)"
 
-img-$(OUTDIR)$(ROOT): $(SOURCES_IMG)
-	mkdir -p $(OUTDIR)$(ROOT)
-	for file in $?; do \
-		rm -rf "$(OUTDIR)$(ROOT)$${file}"; \
-		mkdir -p $$(dirname "$(OUTDIR)$(ROOT)$${file}"); \
-		cp "$${file}" "$(OUTDIR)$(ROOT)$${file}"; \
-	done
-	touch "$(OUTDIR)$(ROOT)"
+$(OUTDIR)/%/: $(WEBSITE)/%/
+	rsync -av --delete "$^" "$@"
+	touch "$@"
 
-
-$(WEBSITE)$(ROOT): md-$(OUTDIR)$(ROOT) img-$(OUTDIR)$(ROOT)
+$(WEBSITE)$(ROOT): $(OUTDIR)$(ROOT)
 	rsync -av --delete "$(OUTDIR)$(ROOT)" "$(WEBSITE)$(ROOT)"
+	touch "$(WEBSITE)$(ROOT)"
 
 .PHONY: all website serve update clean
