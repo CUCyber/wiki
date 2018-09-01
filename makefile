@@ -18,7 +18,7 @@ all: $(OUTDIR)$(ROOT)
 website: $(WEBSITE)$(ROOT)
 
 serve: $(OUTDIR)$(ROOT) $(OUTDIR)/images/ $(OUTDIR)/fonts/ $(OUTDIR)/css/ $(OUTDIR)/js/
-	./$(SERVE) $(OUTDIR)
+	"./$(SERVE)" "$(OUTDIR)"
 
 update: $(WEBSITE)$(ROOT)
 	git -C "$(WEBSITE)" add ".$(ROOT)"
