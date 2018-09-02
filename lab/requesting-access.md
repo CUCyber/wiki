@@ -24,4 +24,3 @@ As per the terms of service agreement that you received, this will result in imm
 ## Connect to lab
 
 Information on connecting to the lab can be found [here](lab/connecting).
-
