@@ -28,7 +28,7 @@ sudo pacman -S virt-viewer
 
 ### Windows Instructions
 
-* Download and install the installer file at [https://architect.lab.cucyber.net/ovirt-engine-files/spice/virt-viewer-x64.msi](https://architect.lab.cucyber.net/ovirt-engine-files/spice/virt-viewer-x64.msi).
+* Download and install the installer file at the [Virt Manager](https://virt-manager.org/download/sources/virt-viewer/virt-viewer-x64-7.0.msi) page.
 
 
 ### MacOS Instructions
