@@ -32,8 +32,8 @@ Here is a rough logical network diagram of the lab. Hopefully this may help clar
 
 ---
 
-![Cyber Warfare Space logical network digram - legend](logical-lab-legend.png){ width=100% }
+![Cyber Warfare Space logical network digram - legend](lab/logical-lab-legend.png){ width=100% }
 
 ---
 
-![Cyber Warfare Space logical network digram](logical-lab.png){ width=100% }
+![Cyber Warfare Space logical network digram](lab/logical-lab.png){ width=100% }
