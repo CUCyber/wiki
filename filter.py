@@ -3,7 +3,7 @@ import io
 import json
 import sys
 
-from pandocfilters import walk, Link
+from pandocfilters import walk, Link, Image
 
 
 # change targets of links
@@ -24,6 +24,18 @@ def rewrite_target(key, val, fmt, meta):
                 url = meta['root']['c'] + parts[0] + '.html'
 
         return Link(attr, inline, [url, target[1]])
+    # when we are at a image node
+    elif key == 'Image':
+        # get details of link
+        attr, inline, target = val
+
+        if target[0].startswith('http://') or target[0].startswith('https://') or target[0].startswith('mailto:'):
+            url = target[0]
+        else:
+            path = target[0]
+            url = meta['root']['c'] + path
+
+        return Image(attr, inline, [url, target[1]])
 
 
 # rewrite link targets in file

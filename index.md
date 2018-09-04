@@ -13,6 +13,7 @@ Welcome to the CU Cyber wiki! Use the links below to get started.
 
 * [Requesting Access](lab/requesting-access)
 * [Connecting](lab/connecting)
+* [Accessing VM Console](lab/console)
 * [Changing Your Password](lab/changing-password)
 * [Boundaries](lab/boundaries)
 
