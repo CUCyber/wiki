@@ -57,6 +57,6 @@ Select the "lab.cucyber.net" profile from the dropdown as shown below and enter 
 
 ## Open Console
 
-Open the console by clicking the console icon as shown below. This will download a file called "console.vv". Open this in the Remote Viewer application either by double clicking the file or from the command line in macOS `remote-viewer ~/Downloads/console.vv`.
+Open the console by clicking the console icon as shown below. This will download a file called "console.vv". Open this in the Remote Viewer application either by double clicking the file or from the command line in Linux/macOS `remote-viewer ~/Downloads/console.vv`.
 
 ![](lab/vm.png)
