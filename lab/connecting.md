@@ -40,15 +40,6 @@ sudo pacman -S openconnect openvpn
 
 ### Linux Instructions
 
-#### Connecting to Clemson
-
-**If and only if you are off campus**, you will need to connect to Clemson's VPN. In a terminal, run the following command.
-
-```
-sudo openconnect https://cuvpn.clemson.edu/
-```
-
-
 #### Connect to the Lab
 
 In a terminal, navigate to the folder with your personal OpenVPN config file ending in .ovpn and run the following command.
@@ -60,22 +51,12 @@ sudo openvpn --config <username>.ovpn
 
 ### Mac Instructions
 
-#### Connecting to Clemson
-
-**If and only if you are off campus**, you will need to connect to Clemson's VPN. Do this using the OpenConnect GUI and using 'https://cuvpn.clemson.edu/' as the gateway.
-
-
 #### Connect to the Lab
 
 Use the Tunnelblick client to load your OpenVPN config file ending in .ovpn.
 
 
 ### Windows Instructions
-
-#### Connecting to Clemson
-
-**If and only if you are off campus**, you will need to connect to Clemson's VPN. Do this using the OpenConnect GUI and using 'https://cuvpn.clemson.edu/' as the gateway.
-
 
 #### Connect to the Lab
 
