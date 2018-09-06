@@ -28,7 +28,7 @@ sudo pacman -S virt-viewer
 
 ### Windows Instructions
 
-* Download and install the installer file at the [Virt Manager](https://virt-manager.org/download/sources/virt-viewer/virt-viewer-x64-7.0.msi) page.
+* Download and install the installer file for "virt-viewer" called "Win x64 MSI" at the [Virtual Machine Manager](https://virt-manager.org/download/) download page.
 
 
 ### MacOS Instructions
