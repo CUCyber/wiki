@@ -44,12 +44,14 @@ sudo pacman -S openvpn
 
 **If and only if you are off campus**, you will need to connect to Clemson's VPN using OpenConnect. Follow the instructions [here](lab/connecting-clemson) if that is the case.
 
+First you must download the OpenVPN config file for your account. The config file is in an email titled "CU Cyber Lab Access" from cyber@clemson.edu. Check your email and download the file.
+
 
 ### Linux Instructions
 
 #### Connect to the Lab
 
-In a terminal, navigate to the folder with your personal OpenVPN config file ending in .ovpn and run the following command. The config file is in an email titled "CU Cyber Lab Access" from cyber@clemson.edu. Check your email and download the file.
+In a terminal, navigate to the folder with your personal OpenVPN config file ending in .ovpn and run the following command.
 
 ```
 sudo openvpn --config <username>.ovpn
@@ -60,7 +62,7 @@ sudo openvpn --config <username>.ovpn
 
 #### Connect to the Lab
 
-Use the Tunnelblick client to load your OpenVPN config file ending in .ovpn. The config file is in an email titled "CU Cyber Lab Access" from cyber@clemson.edu. Check your email and download the file.
+Use the Tunnelblick client to load your OpenVPN config file ending in .ovpn.
 
 * Double click your .ovpn file and enter your macOS password into the dialog
 
@@ -79,7 +81,7 @@ Use the Tunnelblick client to load your OpenVPN config file ending in .ovpn. The
 
 #### Connect to the Lab
 
-Use the OpenVPN client to load your OpenVPN config file ending in .ovpn. The config file is in an email titled "CU Cyber Lab Access" from cyber@clemson.edu. Check your email and download the file.
+Use the OpenVPN client to load your OpenVPN config file ending in .ovpn.
 
 
 ## Testing Connection to the Lab
