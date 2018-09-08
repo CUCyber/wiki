@@ -28,12 +28,16 @@ sudo pacman -S openvpn
 
 ### Windows Instructions
 
-* Download and install the [official OpenVPN client](https://openvpn.net/index.php/open-source/downloads.html).
+* Download and install the [official OpenVPN client](https://openvpn.net/index.php/open-source/downloads.html) named "openvpn-install-[ver].exe".
+
+![](lab/openvpn-download.png){ width=512px }
 
 
 ### macOS Instructions
 
 * Download and install the [TunnelBlick](https://tunnelblick.net/) OpenVPN client.
+
+![](lab/tunnelblick-download.png){ width=512px }
 
 
 ## Connecting to the Lab VPN
