@@ -29,10 +29,16 @@ sudo pacman -S openconnect
 
 * Download and install the [OpenConnect GUI](https://github.com/openconnect/openconnect-gui/releases).
 
+![](lab/openconnect-win32-download.png){ width=512px }
+
 
 ### MacOS Instructions
 
-* Download and install the [OpenConnect GUI](https://github.com/openconnect/openconnect-gui/releases).
+* Download and install [Homebrew](https://brew.sh/) then run the following commands.
+
+```
+brew cask install openconnect-gui
+```
 
 
 ## Connecting to the CUVPN

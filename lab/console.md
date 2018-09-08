@@ -31,7 +31,7 @@ sudo pacman -S virt-viewer
 * Download and install the installer file for "virt-viewer" called "Win x64 MSI" at the [Virtual Machine Manager](https://virt-manager.org/download/) download page.
 
 
-### MacOS Instructions
+### macOS Instructions
 
 * Download and install [Homebrew](https://brew.sh/) then run the following commands.
 
