@@ -40,6 +40,16 @@ Any attempt to circumvent the barriers put in place to protect both you and netw
 In addition, details of the incident will be elevated to the [Security Operations Center at Clemson University](https://ccit.clemson.edu/about/departments/information-security-privacy/security-operations-center/) where it will be handled per university policy and if necessary, elevated to the appropriate authorities.
 
 
+## Credentials
+
+Your lab credentials and OpenVPN configuration file must not be shared with anyone inside or outside of Clemson University.
+
+
+## Amendments
+
+Amendments to this agreement can be made at any time by the officers of CU Cyber. A notification will be sent out if and when this happens.
+
+
 ## Approval
 
 Approval to use the lab will be handled on a case-by-case basis by the officers of CU Cyber and those officers reserve the right to deny and revoke access for any reason.
