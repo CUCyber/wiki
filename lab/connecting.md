@@ -31,7 +31,7 @@ sudo pacman -S openvpn
 * Download and install the [official OpenVPN client](https://openvpn.net/index.php/open-source/downloads.html).
 
 
-### MacOS Instructions
+### macOS Instructions
 
 * Download and install the [TunnelBlick](https://tunnelblick.net/) OpenVPN client.
 
@@ -45,33 +45,57 @@ sudo pacman -S openvpn
 
 #### Connect to the Lab
 
-In a terminal, navigate to the folder with your personal OpenVPN config file ending in .ovpn and run the following command.
+In a terminal, navigate to the folder with your personal OpenVPN config file ending in .ovpn and run the following command. The config file is in an email titled "CU Cyber Lab Access" from cyber@clemson.edu. Check your email and download the file.
 
 ```
 sudo openvpn --config <username>.ovpn
 ```
 
 
-### Mac Instructions
+### macOS Instructions
 
 #### Connect to the Lab
 
-Use the Tunnelblick client to load your OpenVPN config file ending in .ovpn.
+Use the Tunnelblick client to load your OpenVPN config file ending in .ovpn. The config file is in an email titled "CU Cyber Lab Access" from cyber@clemson.edu. Check your email and download the file.
+
+* Double click your .ovpn file and enter your macOS password into the dialog
+
+![](lab/ovpn-click.png){ width=256px }
+
+* Click the Tunnelblick icon in the menu bar
+
+![](lab/tunnelblick.png){ width=100% }
+
+* Click "Connect [username]" in the dropdown menu
+
+![](lab/tunnelblick-username.png){ width=256px }
 
 
 ### Windows Instructions
 
 #### Connect to the Lab
 
-Use the OpenVPN client to load your OpenVPN config file ending in .ovpn.
+Use the OpenVPN client to load your OpenVPN config file ending in .ovpn. The config file is in an email titled "CU Cyber Lab Access" from cyber@clemson.edu. Check your email and download the file.
 
 
 ## Testing Connection to the Lab
 
 At this point you should be connected to the lab VPN. To test your connectivity execute the following command.
 
+
+### Linux/macOS
+
 ```
 ping -c 4 oracle.lab.cucyber.net
+```
+
+If the ping succeeds then you've successfully connected to the VPN and your DNS is working as intended!
+
+
+### Windows
+
+```
+ping oracle.lab.cucyber.net
 ```
 
 If the ping succeeds then you've successfully connected to the VPN and your DNS is working as intended!

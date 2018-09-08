@@ -54,6 +54,40 @@ sudo openconnect https://cuvpn.clemson.edu/
 
 Use the OpenConnect GUI with 'https://cuvpn.clemson.edu/' as the gateway. Enter your username, password, and your second password is "push".
 
+* Click the cog dropdown
+
+![](lab/openconnect-add.png){ width=256px }
+
+* Click "New Profile"
+
+![](lab/openconnect-new.png){ width=256px }
+
+* Enter "https://cuvpn.clemson.edu/" as the gateway
+
+![](lab/openconnect-cuvpn.png){ width=256px }
+
+* Click "Save & Connect"
+
+![](lab/openconnect-save.png){ width=256px }
+
+* Click "Accurate Information"
+
+![](lab/openconnect-accurate.png){ width=256px }
+
+* Enter Clemson username
+
+![](lab/openconnect-username.png){ width=256px }
+
+* EnterClemson password
+
+![](lab/openconnect-password.png){ width=256px }
+
+* Enter "push"
+
+![](lab/openconnect-push.png){ width=256px }
+
+* Accept the Duo push on your mobile phone
+
 
 ### Windows Instructions
 
