@@ -10,33 +10,36 @@ title: Connecting to the Lab
 **Fedora**
 
 ```
-sudo dnf install openconnect openvpn
+sudo dnf install openvpn
 ```
 
 **Ubuntu**
 
 ```
-sudo apt install openconnect openvpn
+sudo apt install openvpn
 ```
 
 **Arch**
 
 ```
-sudo pacman -S openconnect openvpn
+sudo pacman -S openvpn
 ```
 
 
 ### Windows Instructions
 
-* Download and install the [OpenConnect GUI](https://github.com/openconnect/openconnect-gui/releases) and the [official OpenVPN client](https://openvpn.net/index.php/open-source/downloads.html).
+* Download and install the [official OpenVPN client](https://openvpn.net/index.php/open-source/downloads.html).
 
 
 ### MacOS Instructions
 
-* Download and install the [OpenConnect GUI](https://github.com/openconnect/openconnect-gui/releases) and the [TunnelBlick](https://tunnelblick.net/) OpenVPN client.
+* Download and install the [TunnelBlick](https://tunnelblick.net/) OpenVPN client.
 
 
 ## Connecting to the Lab VPN
+
+**If and only if you are off campus**, you will need to connect to Clemson's VPN using OpenConnect. Follow the instructions [here](lab/connecting-clemson) if that is the case.
+
 
 ### Linux Instructions
 
