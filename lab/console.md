@@ -54,6 +54,8 @@ Select the "lab.cucyber.net" profile from the dropdown as shown below and enter 
 
 ![](lab/profile.png)
 
+If you get a message saying your password has expired, then you have not changed your password. Follow the instructions [here](lab/changing-password) first.
+
 
 ## Open Console
 
