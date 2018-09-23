@@ -19,4 +19,3 @@ CentOS, while popular, is typically meant for servers. Security on CentOS can be
 
 ## Arch Linux
 Arch Linux is mildly popular but notoriously difficult to manage. It is not recommended for new users looking to get into Linux, however the documentation (https://wiki.archlinux.org/) is extremely robust. There is a fairly large community of Arch users which make it easy to get help, but the setup time and ease is exceptionally difficult compared to Ubuntu.
-

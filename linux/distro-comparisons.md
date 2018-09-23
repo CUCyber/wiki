@@ -72,7 +72,7 @@ These distros have well-tested and stable software versions. Since the software 
 
 https://www.ubuntu.com/server/
 
-### Centos
+### CentOS
 
 https://www.centos.org/
 
