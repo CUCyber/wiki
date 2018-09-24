@@ -18,7 +18,7 @@ These are networks that you are never permitted to communicate with under any ci
 
 * The publicly routable internet
 * The VPN VLAN you are automatically added to when log in via the VPN
-* The oVirt web interface for creating and managing VMs
+* The oVirt web interface for managing VMs
 * The FreeIPA web interface for changing your password
 
 
