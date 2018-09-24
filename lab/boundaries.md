@@ -19,6 +19,7 @@ These are networks that you are never permitted to communicate with under any ci
 * The publicly routable internet
 * The VPN VLAN you are automatically added to when log in via the VPN
 * The oVirt web interface for creating and managing VMs
+* The FreeIPA web interface for changing your password
 
 
 ## Networks you are permitted to attack
@@ -30,10 +31,4 @@ These are networks that you are never permitted to communicate with under any ci
 
 Here is a rough logical network diagram of the lab. Hopefully this may help clarify things. 
 
----
-
-![Cyber Warfare Space logical network digram - legend](lab/logical-lab-legend.png){ width=100% }
-
----
-
-![Cyber Warfare Space logical network digram](lab/logical-lab.png){ width=100% }
+![](lab/boundaries.png){ width=100% }
