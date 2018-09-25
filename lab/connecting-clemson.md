@@ -37,7 +37,8 @@ sudo pacman -S openconnect
 * Download and install [Homebrew](https://brew.sh/) then run the following commands.
 
 ```
-brew cask install openconnect-gui
+brew tap horar/openconnect-gui
+brew install openconnect-gui
 ```
 
 
