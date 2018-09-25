@@ -39,6 +39,7 @@ sudo pacman -S openconnect
 ```
 brew tap horar/openconnect-gui
 brew install openconnect-gui
+ln -s /usr/local/Cellar/openconnect-gui/*/OpenConnect-GUI.app /Applications/OpenConnect-GUI.app
 ```
 
 
