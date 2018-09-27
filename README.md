@@ -65,19 +65,36 @@ $ pip3 install watchdog
 ```
 
 
+## Preparation
+
+You must clone the website repository adjacent to the wiki repository with the name 'website' to use `make serve` and `make update`.
+
+```sh
+$ git clone https://github.com/CUCyber/cucyber.github.io.git website
+$ git -C website checkout dev
+```
+
+
+## Downloading
+
+```sh
+$ git clone https://github.com/CUCyber/wiki.git
+```
+
+
 ## Building
 
-To build all of the presentations into a hostable directory, edit the 'makefile' as desired and run `make`. All of the necessary files that should be put on a web server will be created in the 'public' directory.
+To build the wiki into a hostable directory, edit the 'makefile' as desired and run `make`. All of the necessary files that should be put on a web server will be created in the 'public' directory.
 
 
 ## Testing
 
-To build all of the presentations and host them on a temporary local server, edit the 'makefile' as desired and run `make serve`. Open your web browser to 'http://localhost:8080/'.
+To build the wiki and host it on a temporary local server, edit the 'makefile' as desired and run `make serve`. Open your web browser to 'http://localhost:8080/'.
 
 
 ## Updating
 
-To build all of the presentions and upload them to the website automatically, edit the 'makefile' as desired and for the website git repository location and run `make update`. You must have push access to the repository at the specified directory.
+To build the wiki and upload it to the website automatically, edit the 'makefile' as desired and for the website git repository location and run `make update`. You must have push access to the repository at the specified directory.
 
 
 ## Cleaning
