@@ -53,7 +53,7 @@ sudo openconnect https://cuvpn.clemson.edu/
 Use the OpenConnect GUI with 'https://cuvpn.clemson.edu/' as the gateway. Enter your username, password, and your second password is "push".
 
 
-## MacOS Instructions
+## macOS Instructions
 
 ### Installing the OpenConnect Client
 
