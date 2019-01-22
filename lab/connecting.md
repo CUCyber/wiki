@@ -2,10 +2,14 @@
 title: Connecting to the Lab
 ...
 
-## Installing the OpenVPN Client
+## Before You Begin
+
+See the table of contents on the right for links to connecting from your platform.
 
 
-### Linux Instructions
+## Linux Instructions
+
+### Installing the OpenVPN Client
 
 **Fedora**
 
@@ -26,30 +30,11 @@ sudo pacman -S openvpn
 ```
 
 
-### Windows Instructions
-
-* Download and install the [official OpenVPN client](https://openvpn.net/index.php/open-source/downloads.html) named "openvpn-install-[ver].exe".
-
-![](lab/openvpn-download.png){ width=512px }
-
-
-### macOS Instructions
-
-* Download and install the [TunnelBlick](https://tunnelblick.net/) OpenVPN client.
-
-![](lab/tunnelblick-download.png){ width=512px }
-
-
-## Connecting to the Lab VPN
+### Connecting to the Lab VPN
 
 **If and only if you are off campus**, you will need to connect to Clemson's VPN using OpenConnect. Follow the instructions [here](lab/connecting-clemson) if that is the case.
 
 First you must download the OpenVPN config file for your account. The config file is in an email titled "CU Cyber Lab Access" from cyber@clemson.edu. Check your email and download the file.
-
-
-### Linux Instructions
-
-#### Connect to the Lab
 
 In a terminal, navigate to the folder with your personal OpenVPN config file ending in .ovpn and run the following command.
 
@@ -58,34 +43,32 @@ sudo openvpn --config <username>.ovpn
 ```
 
 
-### macOS Instructions
+### Testing Connection to the Lab
 
-#### Connect to the Lab
+At this point you should be connected to the lab VPN. To test your connectivity execute the following command.
 
-Use the Tunnelblick client to load your OpenVPN config file ending in .ovpn.
+```
+ping -c 4 oracle.lab.cucyber.net
+```
 
-
-#### First Time
-
-* Double click your .ovpn file and enter your macOS password into the dialog
-
-![](lab/ovpn-click.png){ width=256px }
+If the ping succeeds then you've successfully connected to the VPN and your DNS is working as intended!
 
 
-#### Every Time
+### Change Your Password
 
-* Click the Tunnelblick icon in the menu bar
-
-![](lab/tunnelblick.png){ width=256px }
-
-* Click "Connect [username]" in the dropdown menu
-
-![](lab/tunnelblick-username.png){ width=256px }
+After successfully connecting to the lab environment, you will need to [change your password](lab/changing-password).
 
 
-### Windows Instructions
+## Windows Instructions
 
-#### Connect to the Lab
+### Installing the OpenVPN Client
+
+* Download and install the [official OpenVPN client](https://openvpn.net/index.php/open-source/downloads.html) named "openvpn-install-[ver].exe".
+
+![](lab/openvpn-download.png){ width=512px }
+
+
+### Connect to the Lab VPN
 
 Use the OpenVPN client to load your OpenVPN config file ending in .ovpn.
 
@@ -122,21 +105,7 @@ Use the OpenVPN client to load your OpenVPN config file ending in .ovpn.
 ![](lab/openvpn-connect.png){ width=256px }
 
 
-## Testing Connection to the Lab
-
-At this point you should be connected to the lab VPN. To test your connectivity execute the following command.
-
-
-### Linux/macOS
-
-```
-ping -c 4 oracle.lab.cucyber.net
-```
-
-If the ping succeeds then you've successfully connected to the VPN and your DNS is working as intended!
-
-
-### Windows
+### Testing Connection to the Lab
 
 ```
 ping oracle.lab.cucyber.net
@@ -145,6 +114,54 @@ ping oracle.lab.cucyber.net
 If the ping succeeds then you've successfully connected to the VPN and your DNS is working as intended!
 
 
-## Change Your Password
+### Change Your Password
+
+After successfully connecting to the lab environment, you will need to [change your password](lab/changing-password).
+
+
+## macOS Instructions
+
+### Installing the OpenVPN Client
+
+* Download and install the [TunnelBlick](https://tunnelblick.net/) OpenVPN client.
+
+![](lab/tunnelblick-download.png){ width=512px }
+
+
+### Connect to the Lab VPN
+
+Use the Tunnelblick client to load your OpenVPN config file ending in .ovpn.
+
+
+#### First Time
+
+* Double click your .ovpn file and enter your macOS password into the dialog
+
+![](lab/ovpn-click.png){ width=256px }
+
+
+#### Every Time
+
+* Click the Tunnelblick icon in the menu bar
+
+![](lab/tunnelblick.png){ width=256px }
+
+* Click "Connect [username]" in the dropdown menu
+
+![](lab/tunnelblick-username.png){ width=256px }
+
+
+### Testing Connection to the Lab
+
+At this point you should be connected to the lab VPN. To test your connectivity execute the following command.
+
+```
+ping -c 4 oracle.lab.cucyber.net
+```
+
+If the ping succeeds then you've successfully connected to the VPN and your DNS is working as intended!
+
+
+### Change Your Password
 
 After successfully connecting to the lab environment, you will need to [change your password](lab/changing-password).

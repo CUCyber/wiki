@@ -2,9 +2,14 @@
 title: Connecting to Clemson
 ...
 
-## Installing the OpenConnect Client
+## Before You Begin
 
-### Linux Instructions
+See the table of contents on the right for links to connecting from your platform.
+
+
+## Linux Instructions
+
+### Installing the OpenConnect Client
 
 **Fedora**
 
@@ -25,14 +30,32 @@ sudo pacman -S openconnect
 ```
 
 
-### Windows Instructions
+### Connecting to CUVPN
+
+In a terminal, run the following command. Enter your username, password, and your second password is "push".
+
+```
+sudo openconnect https://cuvpn.clemson.edu/
+```
+
+
+## Windows Instructions
+
+### Installing the OpenConnect Client
 
 * Download and install the [OpenConnect GUI](https://github.com/openconnect/openconnect-gui/releases).
 
 ![](lab/openconnect-win32-download.png){ width=512px }
 
 
-### MacOS Instructions
+### Connecting to CUVPN
+
+Use the OpenConnect GUI with 'https://cuvpn.clemson.edu/' as the gateway. Enter your username, password, and your second password is "push".
+
+
+## MacOS Instructions
+
+### Installing the OpenConnect Client
 
 * Download and install [Homebrew](https://brew.sh/) then run the following commands.
 
@@ -42,23 +65,7 @@ brew install openconnect-gui
 ln -s /usr/local/Cellar/openconnect-gui/*/OpenConnect-GUI.app /Applications/OpenConnect-GUI.app
 ```
 
-
-## Connecting to the CUVPN
-
-### Linux Instructions
-
-#### Connecting to Clemson
-
-In a terminal, run the following command. Enter your username, password, and your second password is "push".
-
-```
-sudo openconnect https://cuvpn.clemson.edu/
-```
-
-
-### Mac Instructions
-
-#### Connecting to Clemson
+### Connecting to CUVPN
 
 Use the OpenConnect GUI with 'https://cuvpn.clemson.edu/' as the gateway. Enter your username, password, and your second password is "push".
 
@@ -86,7 +93,7 @@ Use the OpenConnect GUI with 'https://cuvpn.clemson.edu/' as the gateway. Enter 
 
 ![](lab/openconnect-username.png){ width=256px }
 
-* EnterClemson password
+* Enter Clemson password
 
 ![](lab/openconnect-password.png){ width=256px }
 
@@ -95,10 +102,3 @@ Use the OpenConnect GUI with 'https://cuvpn.clemson.edu/' as the gateway. Enter 
 ![](lab/openconnect-push.png){ width=256px }
 
 * Accept the Duo push on your mobile phone
-
-
-### Windows Instructions
-
-#### Connecting to Clemson
-
-Use the OpenConnect GUI with 'https://cuvpn.clemson.edu/' as the gateway. Enter your username, password, and your second password is "push".
