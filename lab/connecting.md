@@ -64,13 +64,19 @@ sudo openvpn --config <username>.ovpn
 
 Use the Tunnelblick client to load your OpenVPN config file ending in .ovpn.
 
+
+#### First Time
+
 * Double click your .ovpn file and enter your macOS password into the dialog
 
 ![](lab/ovpn-click.png){ width=256px }
 
+
+#### Every Time
+
 * Click the Tunnelblick icon in the menu bar
 
-![](lab/tunnelblick.png){ width=100% }
+![](lab/tunnelblick.png){ width=256px }
 
 * Click "Connect [username]" in the dropdown menu
 
@@ -82,6 +88,38 @@ Use the Tunnelblick client to load your OpenVPN config file ending in .ovpn.
 #### Connect to the Lab
 
 Use the OpenVPN client to load your OpenVPN config file ending in .ovpn.
+
+* Open the OpenVPN GUI
+
+![](lab/openvpn-gui.png){ width=256px }
+
+
+#### First Time
+
+* **If a dialog pops up about no connection profiles found, click "OK"**
+
+* Right click on the OpenVPN client in the system tray
+
+![](lab/openvpn-tray.png){ width=256px }
+
+* Click on "Import Profile"
+
+![](lab/openvpn-import.png){ width=256px }
+
+* Navigate to your .ovpn file and double click it
+
+![](lab/ovpn-windows.png){ width=256px }
+
+
+#### Every Time
+
+* Right click on the OpenVPN client in the system tray
+
+![](lab/openvpn-tray.png){ width=256px }
+
+* Click on "Connect"
+
+![](lab/openvpn-connect.png){ width=256px }
 
 
 ## Testing Connection to the Lab
