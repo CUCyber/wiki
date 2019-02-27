@@ -53,6 +53,8 @@ ping -c 4 oracle.lab.cucyber.net
 
 If the ping succeeds then you've successfully connected to the VPN and your DNS is working as intended!
 
+If you are having issues, **check to see if you are already connected to the VPN or connected more than once**. The VPN does not allow concurrent connections and if there are multiple connections, they end up fighting each other by disconnecting the others every five seconds.
+
 
 ### Change Your Password
 
