@@ -11,7 +11,7 @@ These are networks that you are never permitted to communicate with under any ci
 * The Management VLAN within the lab network
 * Someone else's VLAN within the lab network^[1]^
 
-^[1]^ Unless you are given permission to do so
+^[1]^ Unless you are given written permission to do so by both the VLAN assignee and the lab admins
 
 
 ## Networks you are permitted to access but not permitted to attack
