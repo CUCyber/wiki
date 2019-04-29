@@ -11,6 +11,7 @@ Welcome to the CU Cyber wiki! Use the links below to get started.
 
 ## Lab
 
+* [Agreement](lab/agreement)
 * [Requesting Access](lab/requesting-access)
 * [Connecting to Clemson (Off-Campus Only)](lab/connecting-clemson)
 * [Connecting](lab/connecting)
