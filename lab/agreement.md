@@ -37,7 +37,7 @@ The border of the lab environment is defined as the point at which traffic is NA
 ## Incidents
 
 Any attempt to circumvent the barriers put in place to protect both you and networks you are not permitted to access will result in immediate suspension of access to the lab and lab network while the incident is being investigated. 
-In addition, details of the incident will be elevated to the [Security Operations Center at Clemson University](https://ccit.clemson.edu/about/departments/information-security-privacy/security-operations-center/) where it will be handled per university policy and if necessary, elevated to the appropriate authorities.
+In addition, details of the incident will be elevated to the [Security Operations Center at Clemson University](https://ccit.clemson.edu/cybersecurity/operations-center/) where it will be handled per university policy and if necessary, elevated to the appropriate authorities.
 
 
 ## Credentials
