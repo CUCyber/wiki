@@ -62,6 +62,8 @@ Use the OpenConnect GUI with 'https://cuvpn.clemson.edu/' as the gateway. Enter 
 ```
 brew tap horar/openconnect-gui
 brew install openconnect-gui
+# after an upgrade do the following two commands again
+rm -f /Applications/OpenConnect-GUI.app
 ln -s /usr/local/Cellar/openconnect-gui/*/OpenConnect-GUI.app /Applications/OpenConnect-GUI.app
 ```
 
