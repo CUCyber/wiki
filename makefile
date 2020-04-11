@@ -22,7 +22,7 @@ serve: $(OUTDIR)$(ROOT) $(OUTDIR)/images/ $(OUTDIR)/fonts/ $(OUTDIR)/css/ $(OUTD
 	"./$(SERVE)" "$(OUTDIR)"
 
 update: $(WEBSITE)$(SITE)$(ROOT)
-	git -C "$(WEBSITE)" add ".$(ROOT)"
+	git -C "$(WEBSITE)" add ".$(SITE)$(ROOT)"
 	git -C "$(WEBSITE)" commit -m "update wiki"
 	git -C "$(WEBSITE)" push
 
