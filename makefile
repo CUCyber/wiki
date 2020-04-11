@@ -42,7 +42,7 @@ $(OUTDIR)$(ROOT): $(SOURCES)
 	done
 	touch "$(OUTDIR)$(ROOT)"
 
-$(OUTDIR)/%/: $(WEBSITE)$(SITE)/%/
+$(OUTDIR)/%/: $(WEBSITE)/%/
 	rsync -av --delete "$^" "$@"
 	touch "$@"
 
