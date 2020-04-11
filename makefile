@@ -10,17 +10,18 @@ HIGHLIGHT_STYLE=tango
 SERVE=serve.py
 
 WEBSITE=../website
+SITE=/_site
 
 SOURCES!=find * \( -path '__pycache__' -o -path "$(OUTDIR)" -o -path "$(FILTER)" -o -path "$(TEMPLATE)" -o -path "$(SERVE)" \) -prune -o -type f -a -not \( -name 'makefile' -o -name 'LICENSE.md' -o -name 'README.md' \) -print
 
 all: $(OUTDIR)$(ROOT)
 
-website: $(WEBSITE)$(ROOT)
+website: $(WEBSITE)$(SITE)$(ROOT)
 
 serve: $(OUTDIR)$(ROOT) $(OUTDIR)/images/ $(OUTDIR)/fonts/ $(OUTDIR)/css/ $(OUTDIR)/js/
 	"./$(SERVE)" "$(OUTDIR)"
 
-update: $(WEBSITE)$(ROOT)
+update: $(WEBSITE)$(SITE)$(ROOT)
 	git -C "$(WEBSITE)" add ".$(ROOT)"
 	git -C "$(WEBSITE)" commit -m "update wiki"
 	git -C "$(WEBSITE)" push
@@ -41,12 +42,12 @@ $(OUTDIR)$(ROOT): $(SOURCES)
 	done
 	touch "$(OUTDIR)$(ROOT)"
 
-$(OUTDIR)/%/: $(WEBSITE)/%/
+$(OUTDIR)/%/: $(WEBSITE)$(SITE)/%/
 	rsync -av --delete "$^" "$@"
 	touch "$@"
 
-$(WEBSITE)$(ROOT): $(OUTDIR)$(ROOT)
-	rsync -av --delete "$(OUTDIR)$(ROOT)" "$(WEBSITE)$(ROOT)"
-	touch "$(WEBSITE)$(ROOT)"
+$(WEBSITE)$(SITE)$(ROOT): $(OUTDIR)$(ROOT)
+	rsync -av --delete "$(OUTDIR)$(ROOT)" "$(WEBSITE)$(SITE)$(ROOT)"
+	touch "$(WEBSITE)$(SITE)$(ROOT)"
 
 .PHONY: all website serve update clean
