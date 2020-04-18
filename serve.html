@@ -37,44 +37,40 @@
     </head>
     <body>
         <section>
-            <div>
+            $for(include-before)$
+            $include-before$
+            $endfor$
+            $if(title)$
+            <header id="top">
                 <div>
+                    <h1>$title$</h1>
                     <div>
-                        $for(include-before)$
-                        $include-before$
-                        $endfor$
-                        $if(title)$
-                        <header id="top">
-                            <div>
-                                <h1>$title$</h1>
-                                <div>
-                                    <a href="$repo$/edit/master/$file$.md">Edit This Page</a>
-                                    <a href="$repo$/new/master/$path$">New Page</a>
-                                </div>
-                            </div>
-                            $if(subtitle)$
-                            <p>$subtitle$</p>
-                            $endif$
-                            $if(date)$
-                            <p>$date$</p>
-                            $endif$
-                        </header>
-                        $endif$
-
-                        $if(toc)$
-                        <div>
-                            <nav id="tocnav">
-                                $toc$
-                            </nav>
-                        </div>
-                        $endif$
-$body$
-                        $for(include-after)$
-                        $include-after$
-                        $endfor$
+                        <a href="$repo$/edit/master/$file$.md">Edit This Page</a>
+                        <a href="$repo$/new/master/$path$">New Page</a>
                     </div>
                 </div>
+                $if(subtitle)$
+                <p>$subtitle$</p>
+                $endif$
+                $if(date)$
+                <p>$date$</p>
+                $endif$
+            </header>
+            $endif$
+
+            $if(toc)$
+            <div>
+                <h2 id="toc">Table of Contents</h2>
+
+                <nav id="tocnav">
+                    $toc$
+                </nav>
             </div>
+            $endif$
+$body$
+            $for(include-after)$
+            $include-after$
+            $endfor$
         </section>
     </body>
 </html>
