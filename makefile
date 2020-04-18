@@ -1,30 +1,29 @@
 SHELL=/bin/bash
 
-OUTDIR=public
+OUTDIR=website
+SERVEDIR=public
 ROOT=/wiki/
 
 FILTER=filter.py
 TEMPLATE=template.html
+SERVETEMPLATE=serve.html
+
+REPO=https://github.com/CUCyber/wiki
 
 HIGHLIGHT_STYLE=tango
 SERVE=serve.py
 
-SITE_NAME=CU Cyber
-SITE_URL=https://cucyber.net
-SITE_TWITTER=@CU_Cyber
-SITE_DESCRIPTION=CU Cyber is a student led organization at Clemson University that focuses on the technical and social aspects of cyber security
-
 WEBSITE=../website
-SITE=/_site
+SITE=
 
-SOURCES!=find * \( -path '__pycache__' -o -path "$(OUTDIR)" -o -path "$(FILTER)" -o -path "$(TEMPLATE)" -o -path "$(SERVE)" \) -prune -o -type f -a -not \( -name 'makefile' -o -name 'LICENSE.md' -o -name 'README.md' \) -print
+SOURCES!=find * \( -path '__pycache__' -o -path "$(OUTDIR)" -o -path "$(SERVEDIR)" -o -path "$(FILTER)" -o -path "$(TEMPLATE)" -o -path "$(SERVETEMPLATE)" -o -path "$(SERVE)" \) -prune -o -type f -a -not \( -name 'makefile' -o -name 'LICENSE.md' -o -name 'README.md' \) -print
 
 all: $(OUTDIR)$(ROOT)
 
 website: $(WEBSITE)$(SITE)$(ROOT)
 
-serve: $(OUTDIR)$(ROOT) $(OUTDIR)/images/ $(OUTDIR)/fonts/ $(OUTDIR)/css/ $(OUTDIR)/js/
-	"./$(SERVE)" "$(OUTDIR)"
+serve: $(SERVEDIR)$(ROOT)
+	"./$(SERVE)" "$(SERVEDIR)"
 
 update: $(WEBSITE)$(SITE)$(ROOT)
 	git -C "$(WEBSITE)" add ".$(SITE)$(ROOT)"
@@ -33,6 +32,7 @@ update: $(WEBSITE)$(SITE)$(ROOT)
 
 clean:
 	rm -rf "$(OUTDIR)"
+	rm -rf "$(SERVEDIR)"
 
 $(OUTDIR)$(ROOT): $(SOURCES)
 	mkdir -p $(OUTDIR)$(ROOT)
@@ -40,16 +40,25 @@ $(OUTDIR)$(ROOT): $(SOURCES)
 		rm -rf "$(OUTDIR)$(ROOT)$${file%.md}"; \
 		mkdir -p $$(dirname "$(OUTDIR)$(ROOT)$${file}"); \
 		if [ "$${file: -3}" == .md ]; then \
-			pandoc --filter="$(FILTER)" --template="$(TEMPLATE)" --highlight-style="${HIGHLIGHT_STYLE}" --standalone --toc --output "$(OUTDIR)$(ROOT)$${file%.md}.html" --metadata=root:"$(ROOT)" --metadata=path:"$$(dirname "$$file")" --metadata=file:"$${file%.md}" --metadata=site_name:"$(SITE_NAME)" --metadata=site_url:"$(SITE_URL)" --metadata=site_twitter:"$(SITE_TWITTER)" --metadata=site_description:"$(SITE_DESCRIPTION)" "$${file}"; \
+			pandoc --filter="$(FILTER)" --template="$(TEMPLATE)" --highlight-style="${HIGHLIGHT_STYLE}" --standalone --toc --output "$(OUTDIR)$(ROOT)$${file%.md}.html" --metadata=root:"$(ROOT)" --metadata=path:"$$(dirname "$$file")" --metadata=file:"$${file%.md}" --metadata=repo:"$(REPO)" "$${file}"; \
 		else \
 			cp "$${file}" "$(OUTDIR)$(ROOT)$${file}"; \
 		fi \
 	done
 	touch "$(OUTDIR)$(ROOT)"
 
-$(OUTDIR)/%/: $(WEBSITE)/%/
-	rsync -av --delete "$^" "$@"
-	touch "$@"
+$(SERVEDIR)$(ROOT): $(SOURCES)
+	mkdir -p $(SERVEDIR)$(ROOT)
+	for file in $?; do \
+		rm -rf "$(SERVEDIR)$(ROOT)$${file%.md}"; \
+		mkdir -p $$(dirname "$(SERVEDIR)$(ROOT)$${file}"); \
+		if [ "$${file: -3}" == .md ]; then \
+			pandoc --filter="$(FILTER)" --template="$(SERVETEMPLATE)" --highlight-style="${HIGHLIGHT_STYLE}" --standalone --toc --output "$(SERVEDIR)$(ROOT)$${file%.md}.html" --metadata=root:"$(ROOT)" --metadata=path:"$$(dirname "$$file")" --metadata=file:"$${file%.md}" --metadata=repo:"$(REPO)" "$${file}"; \
+		else \
+			cp "$${file}" "$(SERVEDIR)$(ROOT)$${file}"; \
+		fi \
+	done
+	touch "$(SERVEDIR)$(ROOT)"
 
 $(WEBSITE)$(SITE)$(ROOT): $(OUTDIR)$(ROOT)
 	rsync -av --delete "$(OUTDIR)$(ROOT)" "$(WEBSITE)$(SITE)$(ROOT)"
