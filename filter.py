@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import io
 import json
+import os
 import sys
 
 from pandocfilters import walk, Link, Image
@@ -8,6 +9,9 @@ from pandocfilters import walk, Link, Image
 
 # change targets of links
 def rewrite_target(key, val, fmt, meta):
+    # get potentially different url extension
+    ext = os.getenv('FILTER_URL_EXTENSION', '.html')
+
     # when we are at a link node
     if key == 'Link':
         # get details of link
@@ -19,9 +23,9 @@ def rewrite_target(key, val, fmt, meta):
             parts = target[0].split('#', 1)
 
             if len(parts) > 1:
-                url = meta['root']['c'] + parts[0] + '.html#' + parts[1]
+                url = meta['root']['c'] + parts[0] + ext + '#' + parts[1]
             else:
-                url = meta['root']['c'] + parts[0] + '.html'
+                url = meta['root']['c'] + parts[0] + ext
 
         return Link(attr, inline, [url, target[1]])
     # when we are at a image node

@@ -40,7 +40,7 @@ $(OUTDIR)$(ROOT): $(SOURCES)
 		rm -rf "$(OUTDIR)$(ROOT)$${file%.md}"; \
 		mkdir -p $$(dirname "$(OUTDIR)$(ROOT)$${file}"); \
 		if [ "$${file: -3}" == .md ]; then \
-			pandoc --filter="$(FILTER)" --template="$(TEMPLATE)" --highlight-style="${HIGHLIGHT_STYLE}" --standalone --toc --output "$(OUTDIR)$(ROOT)$${file%.md}.html" --metadata=root:"$(ROOT)" --metadata=path:"$$(dirname "$$file")" --metadata=file:"$${file%.md}" --metadata=repo:"$(REPO)" "$${file}"; \
+			env FILTER_URL_EXTENSION='' pandoc --filter="$(FILTER)" --template="$(TEMPLATE)" --highlight-style="${HIGHLIGHT_STYLE}" --standalone --toc --output "$(OUTDIR)$(ROOT)$${file%.md}.html" --metadata=root:"$(ROOT)" --metadata=path:"$$(dirname "$$file" | sed -e 's/^\.$$//')" --metadata=file:"$${file%.md}" --metadata=repo:"$(REPO)" "$${file}"; \
 		else \
 			cp "$${file}" "$(OUTDIR)$(ROOT)$${file}"; \
 		fi \
@@ -53,7 +53,7 @@ $(SERVEDIR)$(ROOT): $(SOURCES)
 		rm -rf "$(SERVEDIR)$(ROOT)$${file%.md}"; \
 		mkdir -p $$(dirname "$(SERVEDIR)$(ROOT)$${file}"); \
 		if [ "$${file: -3}" == .md ]; then \
-			pandoc --filter="$(FILTER)" --template="$(SERVETEMPLATE)" --highlight-style="${HIGHLIGHT_STYLE}" --standalone --toc --output "$(SERVEDIR)$(ROOT)$${file%.md}.html" --metadata=root:"$(ROOT)" --metadata=path:"$$(dirname "$$file")" --metadata=file:"$${file%.md}" --metadata=repo:"$(REPO)" "$${file}"; \
+			pandoc --filter="$(FILTER)" --template="$(SERVETEMPLATE)" --highlight-style="${HIGHLIGHT_STYLE}" --standalone --toc --output "$(SERVEDIR)$(ROOT)$${file%.md}.html" --metadata=root:"$(ROOT)" --metadata=path:"$$(dirname "$$file" | sed -e 's/^\.$$//')" --metadata=file:"$${file%.md}" --metadata=repo:"$(REPO)" "$${file}"; \
 		else \
 			cp "$${file}" "$(SERVEDIR)$(ROOT)$${file}"; \
 		fi \
